@@ -99,32 +99,27 @@
           if (tipo === 'acao') {
 
             if (valor === 'c') {
-              //limpar o visor 
-              //atribui o .value do resultado a null
+              //limpando o visor 
                document.getElementById('resultado').value = ''
             }
 
+            //concatenando os numeros com as operações
             if (valor === '+' || valor === '-' || valor === '*' || valor === '/' || valor === '.') {
               document.getElementById('resultado').value += valor
             } 
 
+            //trbalhando no resultado das equações 
             if (valor === '=') {
               var valor_campo = document.getElementById('resultado').value
-              valor_campo = eval(valor_campo)
+              valor_campo = eval(valor_campo)//eval() faz calculos matematicos 
               document.getElementById('resultado').value = valor_campo
             }
 
-          }else if (tipo === 'valor') {
+          }else if (tipo === 'valor') {//string valor dentro do evento
 
-            //faz o valor aparecer no visor
-            //o id resultado recebe um valor com base 
-            //na ação onclick, esse valor em forma de number definido em
-            //onclick="calcular('valor', 0)" quando clicado atribui a 'valor' 
-            //.value transforma esse valor de number para string
-            document.getElementById('resultado').value +=  valor
+            //concatena o parametro valor que vai ser um number e mostra no visor
+            document.getElementById('resultado').value +=  valor//parametro da funcão 
           }
-
-
         }
 
     </script>    
